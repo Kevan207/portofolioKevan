@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portofolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .float {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 overflow-x-hidden"
+  >
+    <!-- NavBar -->
+    <nav
+      class="py-4 shadow-sm fixed w-full z-10 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90"
+    >
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <h1 class="font-semibold text-xl">Kevan's Portfolio</h1>
+        <div class="space-x-6 text-sm font-medium">
+          <a href="#homepage" class="hover:text-blue-500">Home</a>
+          <a href="#about" class="hover:text-blue-500">About</a>
+          <a href="#Portofolio" class="hover:text-blue-500">Portofolio</a>
+          <a href="#Contact" class="hover:text-blue-500">Contact</a>
+
+          <button
+            id="themeToggle"
+            class="px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white"
+          ></button>
+        </div>
+      </div>
+    </nav>
+    <!-- Homepage -->
+    <section
+      id="homepage"
+      class="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-500 to-purple-600 text-white dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 shadow"
+    >
+      <h1 class="text-4xl md:text-6xl font-bold animate-bounce">
+        Welcome to
+
+        <span class="text-yellow-300">Kevan's</span> Portfolio
+      </h1>
+      <p class="mt-4 text-lg opacity-90">Front-End Developer</p>
+    </section>
+
+    <!-- AboutMe -->
+    <section
+      id="about"
+      class="py-16 container mx-auto px-6 dark:bg-gray-800 shadow"
+    >
+      <h2 class="text-3xl font-bold mb-8" data-aos="fade-down">About Me</h2>
+      <div class="md:flex gap-10 items-center">
+        <img
+          data-aos="fade-right"
+          src="foto.jpeg"
+          alt="foto diri"
+          class="float w-48 h-48 object-cover rounded-full shadow-lg"
+        />
+        <!-- Deskripsi -->
+        <div data-aos="fade-left">
+          <p class="mb-4">
+            Haloo Saya <strong>Kevan</strong>, seorang front-end developer yang
+            berfokus pada pembuatan website yang modern, interaktif, dan
+            responsif.
+          </p>
+          <!-- Tabel Pendidikan -->
+          <h3 class="text-xl font-semibold mt-6 mb-2">Riwayat Pendidikan</h3>
+          <table class="w-full border border-gray-300 dark:border-gray-600">
+            <tr class="bg-gray-300 text-left dark:bg-gray-600">
+              <th class="px-4 py-2">Institut Pendidikan</th>
+              <th class="px-4 py-2">Tahun</th>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">SMP Dian Bangsa</td>
+              <td class="px-4 py-2">2019-2022</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">SMA Yadika 2 — IPA</td>
+              <td class="px-4 py-2">2022-2025</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">BINUS University — Computer Science</td>
+              <td class="px-4 py-2">
+                2025-<span class="font-semibold text-black-500">Sekarang</span>
+              </td>
+            </tr>
+          </table>
+          <!-- Skill -->
+          <h3 class="text-xl font-semibold mt-6 mb-2">
+            Software & Program Languages
+          </h3>
+
+          <ul class="list-disc ml-6">
+            <li>HTML, CSS, JavaScript, C</li>
+            <li>TailwindCSS</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portofolio -->
+    <section id="Portofolio" class="py-16 bg-white dark:bg-gray-700 shadow">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8" data-aos="zoom-in">My Portfolio</h2>
+        <!-- Porto1 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div
+            data-aos="fade-up"
+            class="bg-gray-200 rounded-xl overflow-hidden shadow dark:bg-gray-800"
+          >
+            <img src="foto1.jpeg" class="w-full h-64 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">Jago Ngoding</h3>
+              <p class="text-sm">Buat Project BNCC</p>
+            </div>
+          </div>
+          <!-- Porto2 -->
+          <div
+            data-aos="fade-up"
+            class="bg-gray-200 rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300 dark:bg-gray-800"
+          >
+            <img src="foto2.jpeg" class="w-full h-64 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">Suka Ngopi</h3>
+              <p class="text-sm">Ngerjainnya Bareng Tomoro</p>
+            </div>
+          </div>
+          <!-- Porto3 -->
+          <div
+            data-aos="fade-up"
+            class="bg-gray-200 rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300 dark:bg-gray-800"
+          >
+            <img src="ml.jpeg" class="w-full h-64 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold">Jago Main Game</h3>
+              <p class="text-sm">Pro Player Ml</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ContactMe -->
+    <section id="Contact" class="py-16 bg-gray-100 dark:bg-gray-800 shadow">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8" data-aos="zoom-out">Contact Me</h2>
+        <form class="space-y-4 max-w-xl" data-aos="fade-up">
+          <!-- Nama -->
+          <div>
+            <input
+              type="text"
+              id="name"
+              placeholder="Nama Lengkap"
+              class="w-full p-2 border border-gray-300 rounded-lg mb-2 text-gray-900"
+            />
+          </div>
+          <!-- Email -->
+          <div>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              class="w-full p-2 border border-gray-300 rounded-lg mb-2 text-gray-900"
+            />
+          </div>
+          <!-- Linkedin -->
+          <div>
+            <input
+              type="url"
+              id="linkedin"
+              placeholder="LinkedIn Profile URL"
+              class="w-full p-2 border border-gray-300 rounded-lg mb-2 text-gray-900"
+            />
+          </div>
+          <!-- Comment -->
+          <div class="md:col-span-2">
+            <textarea
+              id="massage"
+              placeholder="Comment"
+              class="w-full border mb-2 p-2 rounded-lg h-20 col-span-2 text-gray-900"
+            ></textarea>
+          </div>
+          <!-- Tombol -->
+          <button
+            href="#"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-[#2b2b2b] text-gray-300 py-10 px-10">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center"
+      >
+        <!-- Left Section -->
+        <div>
+          <h2 class="text-2xl font-semibold text-white mb-4">Follow Me</h2>
+
+          <div class="flex space-x-2 mt-2">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/kepanajaa/"
+              target="_blank"
+              class="w-10 h-10 overflow-hidden shadow bg-[#3a3a3a] rounded-full flex items-center justify-center hover:bg-pink-500 hover:scale-110 transition duration-300"
+            >
+              <img src="instagram.png" class="w-15 h-15" alt="" />
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/kevan-valensa-737805324/"
+              target="_blank"
+              class="w-10 h-10 overflow-hidden shadow bg-[#3a3a3a] rounded-full flex items-center justify-center hover:bg-blue-500 hover:scale-110 transition duration-300"
+            >
+              <img src="linkedin.png" class="w-15 h-15" alt="" />
+            </a>
+
+            <!-- Twitter -->
+            <a
+              href="https://github.com/Kevan207"
+              target="_blank"
+              class="w-10 h-10 overflow-hidden shadow bg-[#3a3a3a] rounded-full flex items-center justify-center hover:bg-gray-900 hover:scale-110 transition duration-300"
+            >
+              <img src="github.png" class="w-15 h-15" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <p class="text-sm text-gray-400 mt-6 md:mt-0">
+          © 2024 Kevan's Portfolio.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+      const themeToggle = document.getElementById("themeToggle");
+
+      themeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+
+        themeToggle.textContent = document.documentElement.classList.contains(
+          "dark",
+        )
+          ? "☀️"
+          : "🌙";
+      });
+
+      themeToggle.textContent = document.documentElement.classList.contains(
+        "dark",
+      )
+        ? "☀️"
+        : "🌙";
+    </script>
+  </body>
+</html>

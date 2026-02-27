@@ -44,24 +44,27 @@
     class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 overflow-x-hidden"
   >
     <!-- NavBar -->
-    <nav
-      class="py-4 shadow-sm fixed w-full z-10 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90"
-    >
+    <nav class="py-4 fixed w-full z-20 bg-white dark:bg-gray-800 shadow">
       <div class="container mx-auto flex justify-between items-center px-6">
         <h1 class="font-semibold text-xl">Kevan's Portfolio</h1>
+
+        <!-- Mobile Menu Button -->
         <button id="mobileMenuBtn" class="md:hidden text-2xl">☰</button>
-        <div class="space-x-6 text-sm font-medium">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6 text-sm font-medium">
           <a href="#homepage" class="hover:text-blue-500">Home</a>
           <a href="#about" class="hover:text-blue-500">About</a>
           <a href="#Portofolio" class="hover:text-blue-500">Portofolio</a>
           <a href="#Contact" class="hover:text-blue-500">Contact</a>
-
           <button
             id="themeToggle"
             class="px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white"
           ></button>
         </div>
       </div>
+
+      <!-- Mobile Menu -->
       <div
         id="mobileMenu"
         class="hidden flex-col px-6 pb-4 space-y-3 md:hidden bg-white dark:bg-gray-800"
@@ -95,7 +98,7 @@
           data-aos="fade-right"
           src="image/foto.jpeg"
           alt="foto diri"
-          class="float w-48 h-48 object-cover rounded-full shadow-lg"
+          class="float w-48 h-48 md:w-48 md:h-48 object-cover rounded-full shadow-lg"
         />
         <!-- Deskripsi -->
         <div data-aos="fade-left">

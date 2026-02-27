@@ -49,6 +49,7 @@
     >
       <div class="container mx-auto flex justify-between items-center px-6">
         <h1 class="font-semibold text-xl">Kevan's Portfolio</h1>
+        <button id="mobileMenuBtn" class="md:hidden text-2xl">☰</button>
         <div class="space-x-6 text-sm font-medium">
           <a href="#homepage" class="hover:text-blue-500">Home</a>
           <a href="#about" class="hover:text-blue-500">About</a>
@@ -60,6 +61,15 @@
             class="px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white"
           ></button>
         </div>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden flex-col px-6 pb-4 space-y-3 md:hidden bg-white dark:bg-gray-800"
+      >
+        <a href="#homepage" class="hover:text-blue-500">Home</a>
+        <a href="#about" class="hover:text-blue-500">About</a>
+        <a href="#Portofolio" class="hover:text-blue-500">Portofolio</a>
+        <a href="#Contact" class="hover:text-blue-500">Contact</a>
       </div>
     </nav>
     <!-- Homepage -->
@@ -78,7 +88,9 @@
     <!-- AboutMe -->
     <section id="about" class="py-16 mx-auto px-6 dark:bg-gray-800 shadow">
       <h2 class="text-3xl font-bold mb-8" data-aos="fade-down">About Me</h2>
-      <div class="md:flex gap-10 items-center">
+      <div
+        class="flex flex-col md:flex-row gap-10 items-center text-center md:text-left"
+      >
         <img
           data-aos="fade-right"
           src="image/foto.jpeg"
@@ -270,6 +282,15 @@
 
     <script>
       AOS.init();
+    </script>
+
+    <script>
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     </script>
     <script>
       if (localStorage.getItem("theme") === "dark") {

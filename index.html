@@ -44,35 +44,47 @@
     class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 overflow-x-hidden"
   >
     <!-- NavBar -->
-    <nav class="py-4 fixed w-full z-20 bg-white dark:bg-gray-800 shadow">
+    <nav
+      class="py-4 shadow-sm fixed w-full z-20 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90"
+    >
       <div class="container mx-auto flex justify-between items-center px-6">
+        <!-- Brand -->
         <h1 class="font-semibold text-xl">Kevan's Portfolio</h1>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="md:hidden text-2xl">☰</button>
-
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6 text-sm font-medium">
+        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
           <a href="#homepage" class="hover:text-blue-500">Home</a>
           <a href="#about" class="hover:text-blue-500">About</a>
           <a href="#Portofolio" class="hover:text-blue-500">Portofolio</a>
           <a href="#Contact" class="hover:text-blue-500">Contact</a>
+
           <button
-            id="themeToggle"
+            id="themeToggleDesktop"
             class="px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white"
-          ></button>
+          >
+            🌙
+          </button>
         </div>
+
+        <!-- Mobile Button -->
+        <button id="menuBtn" class="md:hidden text-3xl">☰</button>
       </div>
 
       <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="hidden flex-col px-6 pb-4 space-y-3 md:hidden bg-white dark:bg-gray-800"
+        class="hidden md:hidden flex flex-col bg-white dark:bg-gray-800 px-6 py-4 space-y-4 shadow-lg"
       >
         <a href="#homepage" class="hover:text-blue-500">Home</a>
         <a href="#about" class="hover:text-blue-500">About</a>
         <a href="#Portofolio" class="hover:text-blue-500">Portofolio</a>
         <a href="#Contact" class="hover:text-blue-500">Contact</a>
+
+        <!-- Dark mode button mobile -->
+        <button
+          id="themeToggleMobile"
+          class="px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white w-24"
+        ></button>
       </div>
     </nav>
     <!-- Homepage -->
@@ -284,44 +296,42 @@
     </footer>
 
     <script>
+      //AOS init
       AOS.init();
-    </script>
 
-    <script>
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      //Load theme from storage
+      function applyTheme() {
+        const isDark = localStorage.getItem("theme") === "dark";
+        document.documentElement.classList.toggle("dark", isDark);
+
+        const icon = isDark ? "☀️" : "🌙";
+        document.getElementById("themeToggleDesktop").textContent = icon;
+        document.getElementById("themeToggleMobile").textContent = icon;
+      }
+
+      applyTheme();
+
+      //Theme buttons
+      function toggleTheme() {
+        const dark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        applyTheme();
+      }
+
+      document
+        .getElementById("themeToggleDesktop")
+        .addEventListener("click", toggleTheme);
+      document
+        .getElementById("themeToggleMobile")
+        .addEventListener("click", toggleTheme);
+
+      //Mobile menu
+      const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
 
-      mobileMenuBtn.addEventListener("click", () => {
+      menuBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
-    </script>
-    <script>
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-      const themeToggle = document.getElementById("themeToggle");
-
-      themeToggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-
-        if (document.documentElement.classList.contains("dark")) {
-          localStorage.setItem("theme", "dark");
-        } else {
-          localStorage.setItem("theme", "light");
-        }
-
-        themeToggle.textContent = document.documentElement.classList.contains(
-          "dark",
-        )
-          ? "☀️"
-          : "🌙";
-      });
-
-      themeToggle.textContent = document.documentElement.classList.contains(
-        "dark",
-      )
-        ? "☀️"
-        : "🌙";
     </script>
   </body>
 </html>

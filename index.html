@@ -45,11 +45,12 @@
   >
     <!-- NavBar -->
     <nav
-      class="py-4 shadow-sm fixed w-full z-20 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90"
+      id="navbar"
+      class="py-4 shadow-lg fixed w-full z-20 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90"
     >
       <div class="container mx-auto flex justify-between items-center px-6">
         <!-- Brand -->
-        <h1 class="font-semibold text-xl">Kevan's Portfolio</h1>
+        <h1 class="font-semibold text-lg md:text-xl">Kevan's Portfolio</h1>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
@@ -73,12 +74,20 @@
       <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="hidden md:hidden flex flex-col bg-white dark:bg-gray-800 px-6 py-4 space-y-4 shadow-lg"
+        class="hidden md:hidden flex flex-col bg-white dark:bg-gray-800 px-6 py-4 space-y-4 shadow-lg absolute dark:bg-opacity-90 top-full left-0 w-full"
       >
-        <a href="#homepage" class="hover:text-blue-500">Home</a>
-        <a href="#about" class="hover:text-blue-500">About</a>
-        <a href="#Portofolio" class="hover:text-blue-500">Portofolio</a>
-        <a href="#Contact" class="hover:text-blue-500">Contact</a>
+        <a href="#homepage" class="hover:text-blue-500 dark:bg-opacity-90"
+          >Home</a
+        >
+        <a href="#about" class="hover:text-blue-500 dark:bg-opacity-90"
+          >About</a
+        >
+        <a href="#Portofolio" class="hover:text-blue-500 dark:bg-opacity-90"
+          >Portofolio</a
+        >
+        <a href="#Contact" class="hover:text-blue-500 dark:bg-opacity-90"
+          >Contact</a
+        >
 
         <!-- Dark mode button mobile -->
         <button
@@ -92,12 +101,12 @@
       id="homepage"
       class="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-500 to-purple-600 text-white dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 shadow"
     >
-      <h1 class="text-4xl md:text-6xl font-bold animate-bounce">
+      <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold animate-bounce">
         Welcome to
 
         <span class="text-yellow-300">Kevan's</span> Portfolio
       </h1>
-      <p class="mt-4 text-lg opacity-90">Front-End Developer</p>
+      <p class="mt-4 text-sm md:text-lg opacity-90">Front-End Developer</p>
     </section>
 
     <!-- AboutMe -->
@@ -121,7 +130,9 @@
           </p>
           <!-- Tabel Pendidikan -->
           <h3 class="text-xl font-semibold mt-6 mb-2">Riwayat Pendidikan</h3>
-          <table class="w-full border border-gray-300 dark:border-gray-600">
+          <table
+            class="w-full border text-left border-gray-300 dark:border-gray-600"
+          >
             <tr class="bg-gray-300 text-left dark:bg-gray-600">
               <th class="px-4 py-2">Institut Pendidikan</th>
               <th class="px-4 py-2">Tahun</th>
@@ -146,7 +157,7 @@
             Software & Program Languages
           </h3>
 
-          <ul class="list-disc ml-6">
+          <ul class="text-left list-disc ml-6">
             <li>HTML, CSS, JavaScript, C</li>
             <li>TailwindCSS</li>
             <li>Figma</li>
@@ -296,7 +307,7 @@
     </footer>
 
     <script>
-      //AOS init
+      // Aos Animation
       AOS.init();
 
       //Load theme from storage
@@ -328,9 +339,11 @@
       //Mobile menu
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
+      const navbar = document.getElementById("navbar");
 
       menuBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
+        navbar.classList.toggle("bg-opacity-90");
       });
     </script>
   </body>
